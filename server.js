@@ -1,23 +1,28 @@
 //Node js server
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8080;
 
-var port = process.env.PORT || 8080
+bodyParser = require('body-parser');
 
 app.use(express.static(__dirname));
 
 app.get("/", function(req, res)
 {
     res.render("index");
-})
+});
 
 app.listen(port, function()
 {
     console.log("app running");
-})
+});
 
 //Mailer
-var nodemailer = require('nodemailer');
+nodemailer = require('nodemailer');
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
 app.post('/mail', (req, res) => {
     console.log(req.body);
 

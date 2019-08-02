@@ -15,7 +15,7 @@ app.listen(port, function()
 {
     console.log("app running");
 })
-/*
+
 //Mailer
 var nodemailer = require('nodemailer');
 app.post('/mail', (req, res) => {
@@ -38,4 +38,3 @@ app.post('/mail', (req, res) => {
 
 
 });
-*/

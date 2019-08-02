@@ -4,6 +4,7 @@ var app = express();
 var port = process.env.PORT || 8080;
 var nodeoutlook = require('nodejs-nodemailer-outlook')
 var bodyParser = require('body-parser');
+var path = require('path');
 
 app.use(express.static(__dirname));
 
@@ -31,8 +32,9 @@ app.post('/mail', (req, res) => {
         auth:{
             user: "david.mcdowell@siu.edu",
             pass: "Lassally00135???l"
-        }, from: 'david.mcdowell@siu.edu',
-        to: req.body.email,
+        }, 
+        from: 'david.mcdowell@siu.edu',
+        to: 'dmcdowell00135@gmail.com',
         subject: 'Thank You for your submission',
         html: '<b>Where does this go?</b>',
         text: 'Is this in the body?',

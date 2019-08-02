@@ -1,9 +1,9 @@
 //Node js server
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 8080;
-
-bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var port = process.env.PORT || 8080;
+var nodeoutlook = require('nodejs-nodemailer-outlook')
+var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname));
 
@@ -18,15 +18,12 @@ app.listen(port, function()
 });
 
 //Mailer
-nodemailer = require('nodemailer');
-
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.post('/mail', (req, res) => {
     console.log(req.body);
 
-    var nodeoutlook = require('nodejs-nodemailer-outlook')
     nodeoutlook.sendEmail({
         auth:{
             user: "david.mcdowell.cs350@outlook.com",

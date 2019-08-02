@@ -1,12 +1,13 @@
 {
-    "name" : "project4",
-    "verson" : "1.0.0",
-    "scripts" : {
-        "start" : "node server.js"
-    },
-    "dependencies": {
-        "express" : "4.13.3"
-    },
-    "author" : "David McDowell",
-    "license" : "ISC"
+  "name": "project4",
+  "verson": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.13.3",
+    "nodemailer": "^6.3.0"
+  },
+  "author": "David McDowell",
+  "license": "ISC"
 }

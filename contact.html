@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "author" content = "David McDowell">
+        <meta name = "decription" content = "Summer Schedule">
+        <title>Summer Schedule</title>
+
+        <link rel="stylesheet" href="../css/style_sheet.css">
+
+        <script src="../javascript/contact.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <h2 id="summer_schedule"> Summer Schedule
+            </h2>
+            <hr>
+        </header>
+
+        <ul class = "topbar">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./summer_schedule.html">Summer Schedule</a></li>
+            <li><a href="./favorite_mottos.html">Mottos</a></li>
+            <li><a href="./hobbies.html">Hobbies</a></li>
+            <li><a href="./meditation_music.html">Meditation Music</a></li>
+            <li><a href="./game.html">Game</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+
+        <section>
+            <h3>Visitor</h3>
+            <form onsubmit="displayThankYou()" method="post">
+                Name:
+                <input type="text" id="name" size="15"><br>
+                Address:
+                <input type="text" id="address" size="15"><br>
+                Phone:
+                <input type="text" id="phone" size="15"><br>
+                Email:
+                <input type="text" id="email" size="15"><br><br>
+                Comments           
+                <br>
+                <textarea rows="5" cols="25" name="comment">
+                        Enter comments here...
+                </textarea><br><br>
+                 
+                <input type="submit" value="Submit">
+                </form>
+        </section>
+
+    </body>
+</html>

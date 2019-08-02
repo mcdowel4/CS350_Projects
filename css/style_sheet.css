@@ -1,0 +1,144 @@
+* {text-align: center;}
+body {
+    background-color: white
+}      
+
+header {
+    -webkit-text-fill-color:white;
+    background-image: url(./background/siu);
+    background-size: 150px;
+    background-position: left;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    -webkit-text-fill-color:black;
+}
+
+footer {
+    background-color: grey
+}
+
+#bio{
+    background-color: grey
+}
+
+#david-homepage {
+    background-color: maroon;
+}
+
+#david-bio {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#myTable, table{
+    border: 1px solid black;
+    background-color: maroon;
+    -webkit-text-fill-color:white
+}
+
+
+#myTable, td {
+    border: 1px solid black;
+    background-color: maroon;
+    -webkit-text-fill-color:white
+    
+}
+
+#myTable, th {
+    border: 1px solid black;
+    background-color: maroon;
+    -webkit-text-fill-color:white
+}
+
+#myTABLE {
+    width: 75%;
+    text-align:center;
+}
+
+.table {
+    display: table;
+    border-spacing: 20px;
+    margin: auto;
+    width: 60%;
+    border: 50px solid maroon;
+    padding: 10px;
+    }
+
+.caption {
+    display: table-caption;
+    font-size: xx-large;
+    text-align: center;
+    }
+
+.row {
+    display: table-row;
+    
+}
+
+.row > * {
+    display: table-cell;
+    text-align: center;
+}
+
+.table2 {
+    display: table;
+    background-image: url(./background/meditation.jpeg);
+    background-size: 500px;
+    background-position: center;
+    border-spacing: 20px;
+    margin: auto;
+    height: 250px;
+    width: 60%;
+    padding: 50px;
+}
+
+.row2 {
+    display: table-row;
+    
+}
+
+.row2 > * {
+    display: table-cell;
+    text-align: center;
+    -webkit-text-fill-color:white;
+    
+}
+
+.row1 {
+    display: table-row;
+    
+}
+
+.row1 > * {
+    display: table-cell;
+    text-align: center;
+}
+
+.topbar{
+    margin: 0;
+    padding: 0;
+    text-align:center;
+}
+
+.topbar li{
+    display: inline-block;
+}
+
+.topbar a {
+    display:inline-block;
+    text-align: center;
+    padding: 10px 10px;
+    margin: auto;
+    font-size: 20px;
+    }
+
+.game board{
+    width: 0;
+    height: 0;
+    border: 1px solid black;
+}
+
+

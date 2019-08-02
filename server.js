@@ -34,7 +34,7 @@ app.post('/mail', (req, res) => {
         html: '<b>Where does this go?</b>',
         text: 'Is this in the body?',
 
-        onError: (e) => res.redirect('schedule.html'),
+        onError: (e) => res.redirect('summer_schedule.html'),
         onSuccess: (i) => res.redirect('index.html')
     });
 

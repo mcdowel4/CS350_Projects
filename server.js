@@ -24,6 +24,9 @@ app.use(bodyParser.json());
 app.post('/mail', (req, res) => {
     console.log(req.body);
 
+    <h1>req.body.email</h1>
+
+/*
     nodeoutlook.sendEmail({
         auth:{
             user: "david.mcdowell.cs350@outlook.com",
@@ -36,6 +39,7 @@ app.post('/mail', (req, res) => {
 
         onError: (e) => res.redirect('summer_schedule.html'),
         onSuccess: (i) => res.redirect('index.html')
+*/        
     });
 
 

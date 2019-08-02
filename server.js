@@ -29,9 +29,9 @@ app.post('/mail', (req, res) => {
 
     nodeoutlook.sendEmail({
         auth:{
-            user: "david.mcdowell.cs350@outlook.com",
-            pass: "david.mcdowell.password"
-        }, from: 'david.mcdowell.cs350@outlook.com',
+            user: "david.mcdowell@siu.edu",
+            pass: "Lassally00135???l"
+        }, from: 'david.mcdowell@siu.edu',
         to: req.body.email,
         subject: 'Thank You for your submission',
         html: '<b>Where does this go?</b>',

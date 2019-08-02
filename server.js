@@ -21,7 +21,7 @@ app.listen(port, function()
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.post('/mail', (req, res) => {
+app.post('/form_data.php', (req, res) => {
     console.log(req.body);
 
     nodeoutlook.sendEmail({

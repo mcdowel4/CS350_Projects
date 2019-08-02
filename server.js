@@ -25,16 +25,13 @@ app.use(bodyParser.json());
 app.post('/mail', (req, res) => {
     console.log(req.body);
 
-   // <h1>req.body.email</h1>
-
-
     nodeoutlook.sendEmail({
         auth:{
             user: "david.mcdowell@siu.edu",
             pass: "Lassally00135???l"
         }, 
         from: 'david.mcdowell@siu.edu',
-        to: 'dmcdowell00135@gmail.com',
+        to: req.body.email,
         subject: 'Thank You for your submission',
         html: '<b>Where does this go?</b>',
         text: 'Is this in the body?',
@@ -42,6 +39,4 @@ app.post('/mail', (req, res) => {
         onError: (e) => res.redirect('summer_schedule.html'),
         onSuccess: (i) => res.redirect('index.html')       
     });
-
-
 });

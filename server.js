@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.post('/mail', (req, res) => {
     console.log(req.body);
 
-    <h1>req.body.email</h1>
+   // <h1>req.body.email</h1>
 
 
     nodeoutlook.sendEmail({

@@ -27,7 +27,6 @@ app.use(bodyParser.json());
 
 
 app.post('/mail', function(req, res){
-    var numFeedBack = 0;
     mongo.connect(url, function(err, client){
         if(err) throw err;
 
@@ -37,27 +36,26 @@ app.post('/mail', function(req, res){
         {
             if(err) throw err;
             db.collection('feedback_data').countDocuments({}).then(function(numItems){
-                numFeedBack = numItems;
+                console.log(numItems);
                 nodeoutlook.sendEmail({
-                auth:{
-                    user: "david.mcdowell@siu.edu",
-                    pass: "Lassally00135???l"
-                }, 
-                from: 'david.mcdowell.CS350@outlook.com',
-                to: req.body.email,
-                subject: 'Thank You for your submission',
-                html: `<b>You are the ${numFeedback}</b>`,
-                text: 'Is this in the body?',
-        
-                onError: (e) => res.redirect('summer_schedule.html'),
-                onSuccess: (i) => res.redirect('index.html')       
+                    auth:{
+                        user: "david.mcdowell@siu.edu",
+                        pass: "Lassally00135???l"
+                    }, 
+                    from: 'david.mcdowell@siu.edu',
+                    to: req.body.email,
+                    subject: 'Thank You for your submission',
+                    html: `<b>You are the ${numItems} </b>`,
+                    text: 'Is this in the body?',
+            
+                    onError: (e) => res.redirect('summer_schedule.html'),
+                    onSuccess: (i) => res.redirect('index.html')       
+                });
             });
         });
     });
 });
-});
 
-/*
 app.post('/mail', (req, res) => {
     console.log(req.body);
 
@@ -69,11 +67,11 @@ app.post('/mail', (req, res) => {
         from: 'david.mcdowell@siu.edu',
         to: req.body.email,
         subject: 'Thank You for your submission',
-        html: '<b>Where does this go?</b>',
+        html: '<b>You are the ${numItems}</b>',
         text: 'Is this in the body?',
 
         onError: (e) => res.redirect('summer_schedule.html'),
         onSuccess: (i) => res.redirect('index.html')       
     });
 });
-*/
+

@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 
 app.post('/mail', function(req, res){
-    mongo.connect(url, { useNewUrlParser: true },function(err, client){
+    mongo.connect(url, {useNewUrlParser: true },function(err, client){
         if(err) throw err;
 
         let db = client.db('heroku_4zw6ftcc');

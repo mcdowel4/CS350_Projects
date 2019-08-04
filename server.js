@@ -26,20 +26,19 @@ app.use(bodyParser.json());
 
 
 
-app.post('/mail', (req, res) => {
-    mongo.connect(url, (err, client) => {
-        if(err){
-            console.error(err);
-            return;
-        };
-        var db = client.db('heroku_4zw6ftcc');
+app.post('/mail', function(req, res){
+    var numFeedBack = 0;
+    mongo.connect(url, function(err, client){
+        if(err) throw err;
+
+        let db = client.db('heroku_4zw6ftcc');
 
         db.collection('feedback_data').insertOne(req.body, function(err)
         {
-            if(err) res.redirect('summer_schedule.html');
-            var numFeedback = db.collection('feedback_data').countDocuments({});
-
-            nodeoutlook.sendEmail({
+            if(err) throw err;
+            db.collection('feedback_data').countDocuments({}).then(function(numItems){
+                numFeedBack = numItems;
+                nodeoutlook.sendEmail({
                 auth:{
                     user: "david.mcdowell.CS350@outlook.com",
                     pass: "david.mcdowell.password"
@@ -53,9 +52,10 @@ app.post('/mail', (req, res) => {
                 onError: (e) => res.redirect('summer_schedule.html'),
                 onSuccess: (i) => res.redirect('index.html')       
             });
-        })
+        });
     });
-})
+});
+});
 
 /*
 app.post('/mail', (req, res) => {

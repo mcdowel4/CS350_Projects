@@ -1,10 +1,23 @@
 //Node js server
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 8080;
-var nodeoutlook = require('nodejs-nodemailer-outlook')
-var bodyParser = require('body-parser');
-var path = require('path');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8080;
+const nodeoutlook = require('nodejs-nodemailer-outlook')
+const bodyParser = require('body-parser');
+const path = require('path');
+const mong = require('mongodb').MongoClient;
+const url = 'https://vast-hamlet-44994.herokuapp.com/';
+
+mongo.connect(url, (err, client) => {
+    if(err){
+        console.error(err);
+        return;
+    }
+});
+
+const db = client.db('kennel');
+
+const collection = db.collection('feedback');
 
 app.use(express.static(__dirname));
 
@@ -21,6 +34,11 @@ app.listen(port, function()
 //Mailer
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+collection.insertMany([{name:'name'}, {name:'address'}, {name:'phone'}, {name:'email'}, {name:'comment'}], (err, result) =>
+{
+    
+})
 
 app.post('/mail', (req, res) => {
     console.log(req.body);

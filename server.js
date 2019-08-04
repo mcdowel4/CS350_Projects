@@ -6,7 +6,7 @@ const nodeoutlook = require('nodejs-nodemailer-outlook')
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongo = require('mongodb').MongoClient;
-const url = 'mongodb://heroku_4zw6ftcc:<dbpassword>@ds217452.mlab.com:17452/heroku_4zw6ftcc';
+const url = 'mongodb://heroku_4zw6ftcc:54gcq4gu7etb3lv4cn62bnfuvj@ds217452.mlab.com:17452/heroku_4zw6ftcc';
 
 app.use(express.static(__dirname));
 

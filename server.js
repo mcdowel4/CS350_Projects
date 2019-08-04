@@ -40,8 +40,8 @@ app.post('/mail', function(req, res){
                 numFeedBack = numItems;
                 nodeoutlook.sendEmail({
                 auth:{
-                    user: "david.mcdowell.CS350@outlook.com",
-                    pass: "david.mcdowell.password"
+                    user: "david.mcdowell@siu.edu",
+                    pass: "Lassally00135???l"
                 }, 
                 from: 'david.mcdowell.CS350@outlook.com',
                 to: req.body.email,

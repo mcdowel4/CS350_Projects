@@ -37,7 +37,7 @@ app.post('/mail', function(req, res){
             if(err) throw err;
             db.collection('feedback_data').countDocuments({}).then(function(numItems){
                 console.log(numItems);
-                nodeoutlook.sendEmail({
+                /*nodeoutlook.sendEmail({
                     auth:{
                         user: "david.mcdowell@siu.edu",
                         pass: "Lassally00135???l"
@@ -50,7 +50,7 @@ app.post('/mail', function(req, res){
             
                     onError: (e) => res.redirect('summer_schedule.html'),
                     onSuccess: (i) => res.redirect('index.html')       
-                });
+                });*/
             });
         });
     });
@@ -67,7 +67,7 @@ app.post('/mail', (req, res) => {
         from: 'david.mcdowell@siu.edu',
         to: req.body.email,
         subject: 'Thank You for your submission',
-        html: '<b>You are the ${numItems}</b>',
+        html: `<b>You are the ${numItems}</b>`,
         text: 'Is this in the body?',
 
         onError: (e) => res.redirect('summer_schedule.html'),

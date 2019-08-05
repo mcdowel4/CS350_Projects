@@ -40,19 +40,21 @@ app.post('/mail', function(req, res){
                         user: "david.mcdowell.cs350@outlook.com",
                         pass: "david.mcdowell.password"
                     }, 
-                    from: `david.mcdowell@siu.edu`,
+                    from: `david.mcdowell.cs350@outlook.com`,
                     to: req.body.email,
                     subject: `Thank You for your submission`,
                     html: `<b>Thank you for your
                     feedback. You are my ${numItems} honored guest who left a feedback</b>`,
                     text: 'Thank You',
-                    
+
                     onSuccess: (i) => res.redirect('index.html')       
                 });
             });
         });
     });
 });
+
+//Project 4
 /*
 app.post('/mail', (req, res) => {
     console.log(req.body);
@@ -62,7 +64,7 @@ app.post('/mail', (req, res) => {
            user: "david.mcdowell.cs350@outlook.com",
            pass: "david.mcdowell.password"
         }, 
-        from: 'david.mcdowell@siu.edu',
+        from: 'david.mcdowell.cs350@outlook.com',
         to: req.body.email,
         subject: 'Thank You for your submission',
         html: `<b>You are the ${numItems}</b>`,

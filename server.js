@@ -37,14 +37,16 @@ app.post('/mail', function(req, res){
             db.collection('feedback_data').countDocuments({}).then(function(numItems){
                 nodeoutlook.sendEmail({
                     auth:{
-                        user: "david.mcdowell@siu.edu",
-                        pass: "Lassally00135???l"
+                        user: "david.mcdowell.cs350@outlook.com",
+                        pass: "david.mcdowell.password"
                     }, 
                     from: `david.mcdowell@siu.edu`,
                     to: req.body.email,
                     subject: `Thank You for your submission`,
-                    html: `<b>You are the ${numItems} </b>`,
-                    text: 'Is this in the body?',
+                    html: `<b>Thank you for your
+                    feedback. You are my ${numItems} honored guest who left a feedback</b>`,
+                    text: 'Thank You',
+                    
                     onSuccess: (i) => res.redirect('index.html')       
                 });
             });
@@ -57,8 +59,8 @@ app.post('/mail', (req, res) => {
 
     nodeoutlook.sendEmail({
         auth:{
-            user: "david.mcdowell@siu.edu",
-            pass: "Lassally00135???l"
+           user: "david.mcdowell.cs350@outlook.com",
+           pass: "david.mcdowell.password"
         }, 
         from: 'david.mcdowell@siu.edu',
         to: req.body.email,

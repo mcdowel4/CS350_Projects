@@ -44,7 +44,8 @@ app.post('/mail', function(req, res){
                     to: req.body.email,
                     subject: `Thank You for your submission`,
                     html: `<b>You are the ${numItems} </b>`,
-                    text: 'Is this in the body?'       
+                    text: 'Is this in the body?',
+                    onSuccess: (i) => res.redirect('index.html')       
                 });
             });
         });
